@@ -9,13 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>vsphere-ws</artifactId>
+    <artifactId>samples-vsphere-ws</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.vmware.vsphere.sdk.samples</groupId>
-            <artifactId>ssoclient</artifactId>
-        </dependency>
         <dependency>
             <groupId>com.vmware.vsphere.sdk</groupId>
             <artifactId>ssoclient</artifactId>
@@ -35,6 +31,10 @@
         <dependency>
             <groupId>com.vmware.vsphere.sdk.samples</groupId>
             <artifactId>sblim-cim-client2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vmware.vsphere.sdk.samples</groupId>
+            <artifactId>samples-ssoclient</artifactId>
         </dependency>
     </dependencies>
 
