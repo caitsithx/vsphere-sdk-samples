@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/tr/1999/REC-html401-19991224/loose.dtd">
+<html><head>
+<title>vCenter Single Sign On SDK Readme</title>
+<!--
+29May2012 - initial version.
+-->
+<meta content="VMware, Inc. All rights reserved." name="copyright"></meta>
+<link rel="stylesheet" type="text/css" href="../vsphere-ws/docresources/template.css"></link>
+<style type="text/css">
+
+h4 {
+	padding: 0;
+	font-size: 12px;
+	font-weight: bold;
+	border-top: 1px solid #dedede;
+	background-color:#E6EDF6;
+}
+
+
+.Parameter {
+	margin: 0 0 7px 0;
+	width: 100%;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.Code
+    {
+	font-size: 11px; font-family: 
+	"Courier New", Courier, monospace; 
+	}
+	
+.Console
+    {
+	font-size: 11px; font-family: 
+	"Courier New", Courier, monospace; 
+	color: #ffffff;
+	font-weight: bold;
+	background: #000000;
+	}
+.Caption {
+	font-size:11px; line-height:12px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #000000; TEXT-DECORATION: none
+}
+.Exp {
+	font-size:11px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #3366AA;
+}
+.Large { font-size: 16px; FONT-WEIGHT: bold; }
+
+.TableText {
+	FONT-SIZE: 11px;
+}
+
+.TableHead {
+	FONT-SIZE: 10px; font-weight: bold;
+}
+
+.BoldRedText {
+	FONT-WEIGHT: bold; COLOR: #CC0000; TEXT-DECORATION: none
+}
+.BoldBlue {
+	FONT-WEIGHT: bold; COLOR: #3366AA; TEXT-DECORATION: none
+}
+.Miniscule {font-size: 9px;
+           }
+
+.Nav {font-size: 11px; COLOR: #3366AA;
+           }
+.Large { font-size: 16px; FONT-WEIGHT: bold; }
+</style>
+
+
+</head>
+<body>
+	
+<table cellpadding="0" cellspacing="5" id="main-table">
+<tr><td id="main-body" align="left">
+<!-- ///*** start of content area ***/// -->
+
+
+<table width="100%" cellpadding="5">
+<tr>
+<td><h1>vCenter Single Sign On SDK Readme</h1></td>
+<td align="right">
+<img src="../vsphere-ws/docresources/vmware.gif" alt="VMware logo" width="187" height="72" border="0"></img>
+</td>
+</tr>
+</table>
+
+<p class="Nav">
+<img src="../vsphere-ws/docresources/page.gif" alt="JAXWS Java Samples Readme" width="13" height="16" border="0"></img> &nbsp;
+<a href="./java/JAXWS/readme_java.html" title="Go to the Readme for the Java samples...">Readme for Java Samples</a>
+<br />
+<img src="../vsphere-ws/docresources/page.gif" alt="vSphere Management SDK Readme" width="13" height="16" border="0"></img> &nbsp;
+<a href="../vSphereManagementSDKReadme.html" title="Go to the Readme for the vSphere Management SDK...">Readme for the vSphere Management SDK</a>
+</p>
+<hr/>
+
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="50%" vAlign="top">
+
+<p>Welcome to the <strong>vCenter Single Sign On SDK</strong>. This Readme contains these topics:</p>
+  	
+	 <ul>
+	  <li><a href="#ssoclientapi" target="_top">What is the vCenter Single Sign On API?</a></li>
+	  <li><a href="#packagecontents" target="_top">What&#146;s in the SDK Package?</a></li>
+	  <li><a href="#resources" target="_top">VMware Resources</a></li>
+	 </ul>
+	 
+</td><td vAlign="top" align="right">
+
+<!--caveat about state of document -->
+<table cellpadding="5" cellspacing="0" width="450" border="0">
+<tr><td colspan="2" align="left"><span class="Exp">Note:&nbsp;&nbsp;</span> Information in this document may not be current. For up-to-date information, check these VMware Web sites:</td></tr>
+<tr><td colspan="2" align="left"><table cellpadding="5" cellspacing="0" width="100%" border="1" class="light-blue-shade">
+<tr><td vAlign="top" colspan="2" align="left"></td></tr>
+<tr class="Caps"><td vAlign="top" width="45%" class="Caption" align="left">Beta or Pre-release Products</td>
+
+<td vAlign="top"><a href="http://communities.vmware.com/community/beta">VMware Beta Community</a></td></tr>
+
+<tr class="Caps"><td class="Caption">Released SDK Products</td><td vAlign="top"><a href="http://www.vmware.com/support/developer/vc-sdk/index.html">VMware vSphere Web Services SDK</a>
+</td></tr></table>
+</td></tr></table>
+<!--conclude caveat about state of links -->
+
+</td></tr></table>
+
+<a name="ssoclientapi"></a>
+<h2><strong>What is the vCenter Single Sign On API?</strong></h2>
+<p>
+A vCenter Single Sign On client uses the vCenter Single Sign On API to connect to the vCenter Single Sign On Server
+for the purpose of obtaining a security token. The token contains authentication claims required for operations
+in the vSphere environment. The vCenter Single Sign On API supports operations to acquire, renew, and validate tokens.
+</p>
+<p>
+For information about how to use the vCenter Single Sign On API, see the
+<i>vCenter Single Sign On Programming Guide</i>.
+For access to the guide, use the link to the vSphere Document Center on the 
+<a href="http://www.vmware.com/support/developer/vc-sdk/">vSphere Web Services SDK Documentation page</a>.
+</p>
+	 
+<a name="packagecontents"></a>    
+<h2><strong>What&#146;s in the SDK Package?</strong></h2>
+<p>The vCenter Single Sign On SDK provides:
+</p>
+<ul>
+<li>Sample code that demonstrates the following tasks:<br /><br />
+<ul>
+<li>How to use the vCenter Single Sign On API to retrieve a SAML token.</li>
+<li>How to use the <code>LoginByToken</code> method to establish a single sign on session.</li>
+</ul><br />
+The sample code includes Java and C# examples of how to use the vCenter Single Sign On API:<br /><br />
+<ul>
+<li>Visual Studio projects. See the readme file for the C# samples
+(<code>SDK/ssoclient/dotnet/cs/samples/README.txt</code>).</li>
+<li>Compiled and ready-to-run Java class files, as well as Java source code files.
+See the readme file for the java samples
+(<a href="java/JAXWS/readme_java.html" title="See the Java Samples Readme for more information...">readme_java</a>)
+for information about building and using the samples.</li>
+</ul>
+<br />
+</li>
+<li>Web Services Definition Language (WSDL) definitions that describe the API for accessing
+the vCenter Single Sign On Server. The SDK contains the <code>STSService.wsdl</code> file
+and the supporting schema files.
+</li><br />
+<li>Shell scripts to run the sample applications. <br /><br />
+<li>
+Compiled client-side libraries (ssoclient.jar, vim25.jar, samples.jar)
+for testing and development purposes.</li>
+</ul>
+
+<p>
+The vCenter Single Sign On SDK is contained in the <code>SDK\ssoclient</code> directory in the vSphere Management SDK.
+</p>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;VMware-vSphere-SDK-<i>x</i>.<i>y</i>.<i>z</i>-<i>build</i></code><br />
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK</code><br />
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ssoclient</code><br /><br />
+<p>
+The following table contains a brief description of the contents of the vCenter Single Sign On Client SDK.
+</p>
+
+<h3>Directory structure (under \SDK\ssoclient): </h3>
+
+<table cellpadding="5" cellspacing="0" border="1" width="90%" class="TableText">
+<tr><th width="15%">Directory</th><th width="60%">Contents</th><th width="25%">Documentation</th></tr>
+
+<tr>
+<td>docs</td>
+<td>Root directory for Java sample documentation.</td>
+<td>
+<a href="docs/java/JAXWS/samples/javadoc/index.html">JAXWS samples documentation</a><br />
+</td>
+</tr>
+
+<tr>
+<td>dotnet\cs</td>
+<td>Root directory for the C# files.
+Contains the Visual Studio solution file (<code>SSOSample.sln</code>),.bat files, and the <code>samples</code>
+directory which contains the Visual Studio projects.
+</td>
+<td><code>SDK/ssoclient/dotnet/cs/sample/README.txt</code></td>
+</tr>
+
+<tr>
+<td>java\JAXWS</td>
+<td>Root directory for the JAXWS files.
+Contains batch files, .jar files, and samples.
+</td>
+<td><a href="java/JAXWS/readme_java.html">Readme for Java samples</a></td>
+</tr>
+
+<tr>
+<td>wsdl</td>
+<td>
+WSDL files for the vCenter Single Sign On API:
+<ul>
+<li>STSService.wsdl - Contains the vCenter Single Sign On API definitions. </li>
+<li>Schema files that support the vCenter Single Sign On API definitions.</li>
+</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+</table>
+
+
+<a name="resources"></a>
+<h2><strong>VMware Resources</strong></h2>
+<ul>
+<li><a href="http://www.vmware.com/communities/content/developer/">Developer Center</a></li>
+<li><a href="http://kb.vmware.com/">Knowledge Base</a></li>
+<li><a href="http://www.vmware.com/communities/content/vmug/index.html">User Groups</a> </li>
+<li><a href="http://communities.vmware.com">VMware Communities</a> </li>
+</ul>
+<p>
+For <strong>released product information</strong>, including known issues, 
+see the <a href="http://www.vmware.com/support/developer/vc-sdk/index.html">VMware Infrastructure SDK</a> page.
+Be sure to read the Release Notes for the most recent information.
+</p>
+
+<hr />
+<table border="0" width="100%">
+<tr>
+<td>
+<p class="Miniscule">Copyright &copy; 2012-2014 VMware, Inc.  All rights not expressly granted herein are reserved.</p>
+</td>
+<td align="right"><p class="Miniscule">Last updated: 16 Jan 2014&nbsp;|&nbsp; vCenter Single Sign On Client SDK</p></td>
+</tr>
+</table>
+
+</td></tr></table>
+
+</body></html>

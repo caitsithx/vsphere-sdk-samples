@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>vCenter Single Sign On SDK JAX-WS Samples Readme</title>
+
+    <meta content="VMware, Inc. All rights reserved." name="copyright"></meta>
+    <link rel="stylesheet" type="text/css" href="../../../vsphere-ws/docresources/template.css"></link>
+    <style type="text/css">
+
+        h4 {
+        padding: 0;
+        font-size: 12px;
+        font-weight: bold;
+        border-top: 1px solid #dedede;
+        background-color:#E6EDF6;
+        }
+
+
+        .Parameter {
+        margin: 0 0 7px 0;
+        width: 100%;
+        font-size: 11px;
+        font-weight: bold;
+        }
+
+        .Code
+        {
+        font-size: 11px; font-family:
+        "Courier New", Courier, monospace;
+        }
+
+        .Console
+        {
+        font-size: 11px; font-family:
+        "Courier New", Courier, monospace;
+        color: #ffffff;
+        font-weight: bold;
+        background: #000000;
+        }
+        .Caption {
+        font-size:11px; line-height:12px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #000000; TEXT-DECORATION:
+        none
+        }
+        .Exp {
+        font-size:11px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #3366AA;
+        }
+        .Large { font-size: 16px; FONT-WEIGHT: bold; }
+
+        .TableText {
+        FONT-SIZE: 11px;
+        }
+
+        .TableHead {
+        FONT-SIZE: 10px; font-weight: bold;
+        }
+
+        .BoldRedText {
+        FONT-WEIGHT: bold; COLOR: #CC0000; TEXT-DECORATION: none
+        }
+        .BoldBlue {
+        FONT-WEIGHT: bold; COLOR: #3366AA; TEXT-DECORATION: none
+        }
+        .Miniscule {font-size: 9px;
+        }
+
+        .Nav {font-size: 11px; COLOR: #3366AA;
+        }
+        .Large { font-size: 16px; FONT-WEIGHT: bold; }
+    </style>
+
+</head>
+<body>
+
+<table cellpadding="5" cellspacing="5" id="main-table">
+    <tr>
+        <td id="main-body" align="left">
+
+            <!-- ///*** start of content area ***/// -->
+
+            <table width="100%" cellpadding="5">
+                <tr>
+                    <td><h1>vCenter Single Sign On SDK: JAX-WS Samples Readme</h1></td>
+                    <td align="right">
+                        <img src="../../../vsphere-ws/docresources/vmware.gif" alt="VMware logo" width="187" height="72"
+                             border="0"></img>
+                    </td>
+                </tr>
+            </table>
+
+            <p class="Nav">
+                <img src="../../../vsphere-ws/docresources/page.gif" alt="vSphere Management SDK Readme" width="13"
+                     height="16" border="0"></img> &nbsp;
+                <a href="../../../vSphereManagementSDKReadme.html"
+                   title="Go to the Readme for the vSphere Management SDK...">Readme for the vSphere Management SDK</a>
+            </p>
+            <hr/>
+
+            <p>
+                This document describes how to run the VMware sample code that uses the JAX-WS bindings for the
+                vCenter Single Sign On API.
+                The samples have been developed to work with the JAX-WS bundled with the JDK 1.6.
+                They are located in sub-directories contained in the following vSphere Management SDK directory:
+            </p>
+
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;<code>SDK/sso/java/JAXWS/samples/com/vmware/sso/client/</code>
+            </p>
+
+            <p>
+                The following sections contain information about building and running the JAX-WS vSphere API
+                samples.
+            </p>
+            <ul>
+                <li><a href="#env">JAVAHOME Environment Variable</a>
+                <li><a href="#linux">Converting Shell Scripts for Linux</a></li>
+                <!-- <li><a href="#build">Building Sample Programs</a></li> -->
+                <li><a href="#samples_usage">Samples usage</a></li>
+                <li><a href="#stub_generation">Generating Stubs from WSDL</a></li>
+            </ul>
+            <a name="env"></a>
+
+            <h2><strong>JAVAHOME Environment Variable</strong></h2>
+
+            <p>
+                You must set the JAVAHOME environment variable to the base directory of a JDK 1.6, preferably b22.
+            </p>
+            <a name="linux"></a>
+
+            <h2><strong>Converting Shell Scripts for Linux</strong></h2>
+
+            <p>
+                The vCenter Single Sign On SDK includes the following shell scripts in the
+                <code>SDK/sso/java/JAXWS/</code> directory.
+            </p>
+            <ul>
+                <!-- <li>build.sh - Generates stubs from the vSphere API WSDL and compiles the samples.</li> -->
+                <li>run.sh - Runs a sample in linux.</li>
+                <li>run.bat - Runs a sample in windows.</li>
+                <!-- <li>clean.sh - Deletes sample .jar files.</li> -->
+            </ul>
+            <p>
+                The shell files in the distribution kit have DOS-style line endings. These do not work
+                when running these scripts on Linux. Use the Linux command <code>dos2unix</code> to convert
+                these files before you use them.
+            </p>
+
+            <p>
+                To run these scripts, set the Execute permission on the files:
+            </p>
+
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;<code>chmod u+awx *.sh</code>
+            </p>
+
+            <a name="samples_usage"></a>
+
+            <h2><strong>Samples usage</strong></h2>
+
+            <p>
+                All samples print a usage summary if you do not specify any options or if you specify
+                --help on the command line.
+            </p>
+
+            <p>
+                You can also find usage information for all samples in the
+                <a href="../../docs/java/JAXWS/samples/javadoc/index.html">JAX-WS Samples Reference Documentation</a>.
+                Each package has a class summary that describes one or more samples.
+            </p>
+
+            <a name="stub_generation"></a>
+
+            <h2><strong>Generating Stubs from WSDL and Compiling Samples</strong></h2>
+
+            <p>
+                The following version of tools are required in order to generate the stubs from the provided WSDL.
+            </p>
+            <ul>
+                <li>JDK 1.6</li>
+                <li>JAX-WS 2.2 API</li>
+            </ul>
+            <p>
+                Note that JDK 1.6 includes the JAX-WS 2.1 API. It does not include the JAX-WS 2.2 API
+                which is required to generate stubs. For information about using JAX-WS 2.2 with JDK 1.6,
+                see the following guides:
+            </p>
+            <ul>
+                <li><a href="http://metro.java.net/guide/Using_JAX_WS_2_x___Metro_1_x_2_0_with_Java_SE_6.html">Metro
+                    Guide - Using JAX-WS 2.x / Metro 1.x/2.0 with Java SE 6</a></li>
+                <li>
+                    <a href="http://jaxb.java.net/guide/Migrating_JAXB_2_0_applications_to_JavaSE_6.html#Using_JAXB_2_1_or_JAXB_2_2_with_JavaSE_6">Unofficial
+                        JAXB Guide - Migrating JAXB 2.0 applications to JavaSE 6</a></li>
+            </ul>
+
+            <p>
+                You can generate the JAXWS stubs from the shipped WSDL by using the <code>wsimport</code> tool.
+                After the stubs have been generated, you can compile the shipped samples by adding these stubs to the
+                classpath.
+            </p>
+
+            <hr/>
+            <table border="0" width="100%">
+                <tr>
+                    <td>
+                        <p class="Miniscule">Copyright &copy; 2011-2014 VMware, Inc. All rights not expressly granted
+                            herein are reserved.</p>
+                    </td>
+                    <td align="right"><p class="Miniscule">Last updated: 16 Jan 2014&nbsp;|&nbsp; VMware Single Sign On
+                        SDK</p></td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+</body>
+</html>

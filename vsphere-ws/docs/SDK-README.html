@@ -1,0 +1,454 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/tr/1999/REC-html401-19991224/loose.dtd">
+<html><head>
+<title>VMware vSphere Web Services SDK Readme</title>
+<!--
+9-Sept-2008; cleanup the where to find info box
+21-, 20-, 18-Jun-2008; simplify even further. We won't have a landing page on www.vmware.com. Need to refer to Communities.
+18-Mar-2008 kwiseth; New simplified readme. Just point to the landing page. Keep named as SDK-README.html to conform to the download instructions.
+-->
+<meta content="VMware, Inc. All rights reserved." name="copyright"></meta>
+<link rel="stylesheet" type="text/css" href="../docresources/template.css"></link>
+<style type="text/css">
+
+h4 {
+	padding: 0;
+	font-size: 12px;
+	font-weight: bold;
+	border-top: 1px solid #dedede;
+	background-color:#E6EDF6;
+}
+
+
+.Parameter {
+	margin: 0 0 7px 0;
+	width: 100%;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.Code
+    {
+	font-size: 11px; font-family: 
+	"Courier New", Courier, monospace; 
+	}
+	
+.Console
+    {
+	font-size: 11px; font-family: 
+	"Courier New", Courier, monospace; 
+	color: #ffffff;
+	font-weight: bold;
+	background: #000000;
+	}
+.Caption {
+	font-size:11px; line-height:12px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #000000; TEXT-DECORATION: none
+}
+.Exp {
+	font-size:11px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #3366AA;
+}
+.Large { font-size: 16px; FONT-WEIGHT: bold; }
+
+.TableText {
+	FONT-SIZE: 11px;
+}
+
+.TableHead {
+	FONT-SIZE: 10px; font-weight: bold;
+}
+
+.BoldRedText {
+	FONT-WEIGHT: bold; COLOR: #CC0000; TEXT-DECORATION: none
+}
+.BoldBlue {
+	FONT-WEIGHT: bold; COLOR: #3366AA; TEXT-DECORATION: none
+}
+.Miniscule {font-size: 9px;
+           }
+
+.Nav {font-size: 11px; COLOR: #3366AA;
+           }
+.Large { font-size: 16px; FONT-WEIGHT: bold; }
+</style>
+
+
+</head>
+<body>
+	
+<table cellpadding="0" cellspacing="5" id="main-table">
+<tr><td id="main-body" align="left">
+<!-- ///*** start of content area ***/// -->
+
+
+<table width="100%" cellpadding="5">
+<tr>
+<td><h1>VMware vSphere Web Services SDK Readme</h1></td>
+<td align="right">
+<img src="../docresources/vmware.gif" alt="VMware logo" width="187" height="72" border="0"></img>
+</td>
+</tr>
+</table>
+
+<p class="Nav">
+<img src="../docresources/page.gif" alt="JAXWS Java Samples Readme" width="13" height="16" border="0"></img> &nbsp;
+<a href="../java/JAXWS/readme_java.html" title="Go to the Readme for the Java samples...">Readme for Java Samples</a>
+<br />
+<img src="../docresources/page.gif" alt="C# Samples Readme" width="13" height="16" border="0"></img> &nbsp;
+<a href="../dotnet/cs/readme_dotnet.html" title="Go to the Readme for the C# samples readme...">Readme for C# (.NET) Samples</a><br />
+<img src="../docresources/page.gif" alt="vSphere Management SDK Readme" width="13" height="16" border="0"></img> &nbsp;
+<a href="../../vSphereManagementSDKReadme.html" title="Go to the Readme for the vSphere Management SDK...">Readme for the vSphere Management SDK</a>
+</p>
+<hr/>
+
+<table cellpadding="0" cellspacing="0" width="100%">
+<tr><td width="50%" vAlign="top">
+
+<p>Welcome to the <strong>VMware vSphere Web Services SDK</strong>. This Readme contains these topics:</p>
+  	
+	 <ul>
+	  <li><a href="#packagecontents" target="_top">What&#146;s in the SDK Package?</a></li>
+	  <li><a href="#viapi" target="_top">What is the VMware vSphere API?</a></li>
+	  <li><a href="#checklist">Checklist of Setup Tasks</a></li>
+	  <li><a href="#resources" target="_top">VMware Resources</a></li>
+	 </ul>
+	 
+</td><td vAlign="top" align="right">
+
+<!--caveat about state of document -->
+<table cellpadding="5" cellspacing="0" width="450" border="0">
+<tr><td colspan="2" align="left"><span class="Exp">Note:&nbsp;&nbsp;</span> Information in this document may not be current. For up-to-date information, check these VMware Web sites:</td></tr>
+<tr><td colspan="2" align="left"><table cellpadding="5" cellspacing="0" width="100%" border="1" class="light-blue-shade">
+<tr><td vAlign="top" colspan="2" align="left"></td></tr>
+<tr class="Caps"><td vAlign="top" width="45%" class="Caption" align="left">Beta or Pre-release Products</td>
+
+<td vAlign="top"><a href="http://communities.vmware.com/community/beta">VMware Beta Community</a></td></tr>
+
+<tr class="Caps"><td class="Caption">Released SDK Products</td><td vAlign="top"><a href="http://www.vmware.com/support/developer/vc-sdk/index.html">VMware vSphere Web Services SDK</a>
+</td></tr></table>
+</td></tr></table>
+<!--conclude caveat about state of links -->
+
+</td></tr></table>
+	 
+<a name="packagecontents"></a>    
+<h2><strong>What&#146;s in the SDK Package?</strong></h2>
+<p>The vSphere Web Services SDK provides:
+</p>
+<ul>
+<li>Sample code that demonstrates common tasks involved in using the vSphere API to manage the virtual infrastructure.
+The sample code includes compiled and ready-to-run Java class files, as well as Java and C# source code files.
+See the respective readme files
+(<a href="../java/JAXWS/readme_java.html" title="See the Java Samples Readme for more information...">readme_java</a> and
+<a href="../dotnet/cs/readme_dotnet.html" title="See the C# Samples Readme for more information">readme_dotnet</a>)
+for information about building and using the samples.<br /><br />
+</li>
+<li>Web Services Definition Language (WSDL) definitions that describe the API for accessing 
+ESXi and vCenter Server systems. The WSDL is divided into two separate files: <br /><br />
+<ul>
+<li>vim.wsdl</li>
+<li>vimService.wsdl (imports the vim.wsdl. Use the vimService.wsdl file to generate stubs.)</li>
+</ul>
+</li><br /><br />
+<li>Batch files and shell scripts to automate the process of generating client-side stubs, and for re-building the sample applications. <br /><br />
+<ul>
+<li>
+For Java developers, compiled client-side libraries (vim.jar, vim25.jar, apputils.jar, samples.jar) are available for testing and development purposes.</li>
+<li>
+For C# developers, the Microsoft Visual Studio project files (.sln) have been included.
+</li>
+</ul>
+<br /></li>
+<li>Reference documentation (<a href="ReferenceGuide/index.html">vSphere API Reference</a>)
+that provides language-neutral descriptive information (object type definitions, properties, and method
+signatures, for example) for the VMware vSphere API.<br /><br /></li>
+</ul>
+
+<p>
+The vSphere Web Services SDK is contained in the <code>SDK\vsphere-ws</code> directory in the vSphere Management SDK.
+</p>
+<code>&nbsp;&nbsp;&nbsp;&nbsp;VMware-vSphere-SDK-<i>x</i>.<i>y</i>.<i>z</i>-<i>build</i></code><br />
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SDK</code><br />
+<code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;vsphere-ws</code><br /><br />
+<p>
+The following table contains a brief description of the contents of the vSphere Web Services SDK.
+</p>
+
+<h3>Directory structure (under \SDK\vsphere-ws): </h3>
+
+<table cellpadding="5" cellspacing="0" border="1" width="90%" class="TableText">
+<tr><th width="15%">Directory</th><th width="60%">Contents</th><th width="25%">Documentation</th></tr>
+
+<tr>
+<td>docresources</td>
+<td>HTML and graphics resource files.</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>docs</td>
+<td>Legal documents and this vSphere Web Services SDK readme file.</td>
+<td><a href="./SDK-README.html">vSphere WSSDK Readme</a></td>
+</tr>
+
+<tr>
+<td>docs\java</td>
+<td>Root directory for sample documentation.</td>
+<td>
+<a href="java/JAXWS/samples/javadoc/index.html">JAXWS samples documentation</a><br />
+</td>
+</tr>
+
+<tr>
+<td>docs\ReferenceGuide</td>
+<td>vSphere API Reference documentation files. <br /> <br />
+User guides (Developer&#146;s Setup Guide and Programming Guide) are available in the
+VMware Document Center. You can find a link to the document center on the 
+<a href="http://www.vmware.com/support/developer/vc-sdk/index.html">http://www.vmware.com/support/developer/vc-sdk/index.html</a>.
+</td>
+<td><a href="ReferenceGuide/index.html">vSphere API Reference</a></td>
+</tr>
+
+<tr>
+<td>dotnet</td>
+<td>Root directory for the .NET (DotNet) samples.
+Includes batch files, plus several other sub-directories containing
+Windows C# sample applications (in the appropriate namespace structure), 
+and the Microsoft Visual Studio project files (.sln files).
+</td>
+<td><a href="../dotnet/cs/readme_dotnet.html">Readme for .NET (DotNet) samples</a></td>
+</tr>
+
+<tr>
+<td>java\JAXWS</td>
+<td>Root directory for the JAXWS files.
+Contains batch files, .jar files, and samples.
+</td>
+<td><a href="../java/JAXWS/readme_java.html">Readme for Java samples</a></td>
+</tr>
+
+<tr>
+<td>wsdl\vim</td>
+<td>
+WSDL files for VI 2.0:
+<ul>
+<li>vim.wsdl - Contains the VMware vSphere API definitions. </li>
+<li>vimService.wsdl - Defines the Web services endpoint. Your client
+application uses this endpoint to access vSphere services.
+The vimService.wsdl file references the vim.wsdl with an import statement;
+specify the vimService.wsdl file (rather than vim.wsdl directly) when you use a generation tool.</li>
+</ul>
+</td>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td vAlign="top">\wsdl\vim25</td>
+<td>
+WSDL files for VI 2.5 and 2.5u2, and vSphere 4.0 and later:
+<ul>
+<li>vim.wsdl - WSDL file that contains the VMware vSphere API definitions.
+
+<li>
+vimService.wsdl - Defines the Web services endpoint. Your client application
+uses this endpoint to access vSphere services.
+The vimService.wsdl file references the vim.wsdl with an import statement;
+specify the vimService.wsdl file (rather than vim.wsdl directly) when you use a generation tool.
+</li>
+</td>
+<td>&nbsp;</td>
+</tr>
+
+</table>
+
+<br /><br />
+<a name="viapi"></a>
+<h2><strong>What is the VMware vSphere API?</strong></h2>
+<p>The VMware vSphere API (vSphere API) provides language-neutral interfaces to the vSphere management framework.
+In much the same way that JMX (Java Management Extension) provides an infrastructure for managing and monitoring 
+Java applications, the VMware vSphere API lets you do the same for VMware vSphere 
+components (for example, virtual machines, host systems) and services (such as performance manager). 
+</p>
+<p>The API provides industry-standard Web services that are hosted on ESXi and vCenter systems.
+The API complies with the Web Services Interoperability Organization (WS-I) Basic Profile 1.0, 
+which includes XML Schema 1.0, SOAP 1.1, and WSDL 1.1. For more information about the WS-I Basic Profile 1.0, 
+see: 
+</p>
+<p><a href="http://www.ws-i.org/Profiles/BasicProfile-1.0-2004-04-16.html">
+http://www.ws-i.org/Profiles/BasicProfile-1.0-2004-04-16.html 
+</a>
+</p>
+<p>The Web services provide life-cycle operations and operations for managing 
+vSphere components&#151;compute resources, virtual machines, networks, storage, and the like.
+</p>
+
+<h3>Accessing VMware vSphere Web Servers</h3>
+
+<p>By default, a VMware vSphere Server listens on port 443, the well-known port for Secure HTTP (HTTPS), 
+which uses SSL (secure sockets layer) to encrypt communications between client application and server. 
+To access a server, use the URN from a web-services client application, as in:</p>
+<p class="Code">
+https://<em>FQDN_Server_or_IP_Address</em>/sdk</p>
+<ul>
+<li>The certificate of the target server must reside on the client machine.
+See &#147;Obtaining Server Certificates&#148; in the Appendix (&#147;vSphere Server Certificates&#148;) of the 
+<i>Developer&#146;s Setup Guide</i>.
+</li>
+<li>To configure the server to support HTTP (rather than HTTPS), see 
+&#147;Modifying the Server Configuration to Support HTTP&#148; in the Appendix (&#147;vSphere Server Certificates&#148;)
+of the <i>Developer&#146;s Setup Guide</i>.
+</li>
+</ul>
+
+<p>
+For access to the guide, use the link to the vSphere Document Center on the 
+<a href="http://www.vmware.com/support/developer/vc-sdk/">vSphere Web Services SDK Documentation page</a>.
+</p>
+
+<a name="checklist"></a>
+<h2><strong>Checklist of Setup Tasks</strong></h2>
+
+<p>
+Setting up your workstation for developing client applications using the vSphere Web Services SDK 
+involves several steps. Assuming you are already developing applications of one kind or another,
+some of the steps below may be unnecessary. Modify the details of the process as appropriate 
+or the specifics of your system. See the
+<a href="http://www.vmware.com/support/developer/vc-sdk/visdk25pubs/visdk25setupguide.pdf">Developer&#146;s Setup Guide</a>
+for complete details. Also see the appropriate readme for your development platform 
+(<a href="../java/JAXWS/readme_java.html">readme_java.html</a>, 
+<a href="../dotnet/cs/readme_dotnet.html">readme_dotnet.html</a>).
+</p>
+
+<p><strong>To get started with the vSphere Web Services SDK</strong>:</p>
+<ol>
+<li>Choose a development language (Java or C#) to use for Web-services client application development.</br></br></li>
+<li>Identify the target server (or servers) that you&#146;ll use during development. (&#147;Target servers&#148;
+refers to the vCenter or ESXi systems that will be the targets of the client applications that you develop.)</br></br></li>
+
+<li>Verify network access to each server by launching a browser and connect to its URL:</br></br>
+
+<strong>https://<em>vsphere-server-name</em></strong></br></br>
+
+<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td class="features">
+<p>
+vSphere servers (vCenter and ESXi) use SSL (secure sockets layer) to encrypt communications, 
+so the default protocol is HTTPS (as shown above).
+</p>
+<ul>
+<li>You can configure a vSphere server to use HTTP (rather than HTTPS).
+See &#147;Modifying the Server Configuration to Support HTTP&#148; in the Appendix
+(&#147;vSphere Server Certificates&#148;) of the <i>Developer&#146;s Setup Guide</i>.
+</li>
+<li>
+If a server is configured for HTTPS, you must import its server-certificates as described in
+&#147;Obtaining Server Certificates&#148; in the (&#147;vSphere Server Certificates&#148;) Appendix
+of the <i>Developer&#146;s Setup Guide</i>.
+</li>
+</ul>
+<br />
+<p>
+For access to the <i>Developer&#146; Setup Guide</i>, use the link to the vSphere Document Center on the 
+<a href="http://www.vmware.com/support/developer/vc-sdk/">vSphere Web Services SDK Documentation page</a>
+</p>
+
+<!-- snippet for table comprising a Note, Caveat, or Warning. Has Blue background -->
+<table cellpadding="0" cellspacing="0" border="1" width ="100%" class="light-blue-shade">
+<tr><td vAlign="top" colspan="2">
+<table cellpadding="0" cellspacing="5" border="0" width ="100%" class="light-blue-shade">
+<tr><td width="50" vAlign="top" align="left">
+<strong>Note</strong>:</td>
+
+<td vAlign="top" align="left">
+
+<p>For testing purposes, you can circumvent server-certificate verification by using the Java
+TrustManager. The JAX-WS samples included in the SDK contain examples of this technique.
+For production environments, you must establish a keystore for certificate verification.
+See the information about using a client-side credential store in the &#147;Authentication and
+Authorization&#148; chapter of the <i>vSphere Web Services SDK Programming Guide</i>.
+</p>
+
+</td></tr></table>
+</td></tr></table>
+<p></p>
+<!-- snippet for table ends here -->
+
+
+
+</td></tr></table>
+</li>
+
+<li>
+Install the development environment appropriate for your programming language.</br></br>
+
+<ul>
+<li><strong>For C#</strong>, use one of the Microsoft development environments,
+such as Microsoft Visual Studio 2008 or greater.
+For more information, visit:</br>
+<a href="http://msdn2.microsoft.com">http://msdn2.microsoft.com</a></br></br>
+</li>
+
+<li><strong>For Java</strong>, use the JDK. VMware recommends JDK 1.7.
+For more information, see:</br>
+<a href="http://java.sun.com/javase/downloads/">http://java.sun.com/javase/downloads/</a></br></br>
+</li>
+</ul>
+
+</li>
+
+<li>Obtain the appropriate Web-services client tools (XML parser, WSDL-to-proxy-code generation tools, runtime) for your programming language:</br></br>
+<ul>
+<li>
+<strong>For C#</strong>, VMware recommends using Microsoft .NET Framework 3.5 or greater.
+If you have been using Microsoft development tools for any length of time, it is likely you already
+have what is needed. You can obtain Microsoft .NET Framework from Microsoft, at:</br>
+<a href="http://msdn2.microsoft.com/en-us/netframework/default.aspx">http://msdn2.microsoft.com/en-us/netframework/default.aspx</a></br></br></br>
+
+You will also need the corresponding Microsoft .NET Framework Software Development Kit, which includes 
+the command-line version of the C# compiler (csc.exe) and the Web Services Enhancements (WSE) 3.0 for Microsoft .NET which includes (WseWsdl3.exe). You can obtain the Microsoft .NET Framework Software 
+Development Kit from::</br>
+<a href="http://www.microsoft.com/downloads/">http://www.microsoft.com/downloads/</a>
+</br></br></li>
+
+<li><strong>For Java</strong>, use the JAX-WS that comes with the JDK.
+</li>
+</ul>
+</li>
+<br />
+
+<li>
+Configure environment and other settings on the workstation (as described in the appropriate language-specific 
+sections in the <a href="http://www.vmware.com/support/developer/vc-sdk/visdk25pubs/visdk25setupguide.pdf">Developer&#146;s Setup Guide</a>), 
+or in the respective readme files (<a href="../java/JAXWS/readme_java.html" title="Go to the Readme for the Java samples...">readme_java.html</a>, 
+<a href="../dotnet/cs/readme_dotnet.html" title="Go to the Readme for C# Samples...">readme_dotnet.html</a>) for the samples.
+</li>
+</ul>
+</ol>
+
+
+<a name="resources"></a>
+<h2><strong>VMware Resources</strong></h2>
+<ul>
+<li><a href="http://www.vmware.com/communities/content/developer/">Developer Center</a></li>
+<li><a href="http://kb.vmware.com/">Knowledge Base</a></li>
+<li><a href="http://www.vmware.com/communities/content/vmug/index.html">User Groups</a> </li>
+<li><a href="http://communities.vmware.com">VMware Communities</a> </li>
+</ul>
+<p>
+For <strong>released product information</strong>, including known issues, 
+see the <a href="http://www.vmware.com/support/developer/vc-sdk/index.html">VMware Infrastructure SDK</a> page.
+Be sure to read the Release Notes for the most recent information.
+</p>
+
+<hr />
+<table border="0" width="100%">
+<tr>
+<td>
+<p class="Miniscule">Copyright &copy; 2010-2014 VMware, Inc.  All rights not expressly granted herein are reserved.</p>
+</td>
+<td align="right"><p class="Miniscule">Last updated: 16 Jan 2014&nbsp;|&nbsp; VMware vSphere Web Services SDK</p></td>
+</tr>
+</table>
+
+</td></tr></table>
+
+</body></html>

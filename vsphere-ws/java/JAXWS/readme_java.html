@@ -1,0 +1,359 @@
+﻿<!--
+  ~ *******************************************************
+  ~ Copyright VMware, Inc. 2010-2012.  All Rights Reserved.
+  ~ *******************************************************
+  ~
+  ~ DISCLAIMER. THIS PROGRAM IS PROVIDED TO YOU "AS IS" WITHOUT
+  ~ WARRANTIES OR CONDITIONS # OF ANY KIND, WHETHER ORAL OR WRITTEN,
+  ~ EXPRESS OR IMPLIED. THE AUTHOR SPECIFICALLY # DISCLAIMS ANY IMPLIED
+  ~ WARRANTIES OR CONDITIONS OF MERCHANTABILITY, SATISFACTORY # QUALITY,
+  ~ NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE.
+  -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+<title>VMware vSphere Web Services SDK JAX-WS Samples Readme</title>
+
+<meta content="VMware, Inc. All rights reserved." name="copyright"></meta>
+<link rel="stylesheet" type="text/css" href="../../docresources/template.css"></link>
+<style type="text/css">
+
+h4 {
+	padding: 0;
+	font-size: 12px;
+	font-weight: bold;
+	border-top: 1px solid #dedede;
+	background-color:#E6EDF6;
+}
+
+
+.Parameter {
+	margin: 0 0 7px 0;
+	width: 100%;
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.Code
+    {
+	font-size: 11px; font-family: 
+	"Courier New", Courier, monospace; 
+	}
+	
+.Console
+    {
+	font-size: 11px; font-family: 
+	"Courier New", Courier, monospace; 
+	color: #ffffff;
+	font-weight: bold;
+	background: #000000;
+	}
+.Caption {
+	font-size:11px; line-height:12px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #000000; TEXT-DECORATION: none
+}
+.Exp {
+	font-size:11px; text-transform: uppercase; FONT-WEIGHT: bold; COLOR: #3366AA;
+}
+.Large { font-size: 16px; FONT-WEIGHT: bold; }
+
+.TableText {
+	FONT-SIZE: 11px;
+}
+
+.TableHead {
+	FONT-SIZE: 10px; font-weight: bold;
+}
+
+.BoldRedText {
+	FONT-WEIGHT: bold; COLOR: #CC0000; TEXT-DECORATION: none
+}
+.BoldBlue {
+	FONT-WEIGHT: bold; COLOR: #3366AA; TEXT-DECORATION: none
+}
+.Miniscule {font-size: 9px;
+           }
+
+.Nav {font-size: 11px; COLOR: #3366AA;
+           }
+.Large { font-size: 16px; FONT-WEIGHT: bold; }
+</style>
+
+</head>
+<body>
+
+<table cellpadding="5" cellspacing="5" id="main-table">
+<tr><td id="main-body" align="left">
+
+<!-- ///*** start of content area ***/// -->
+
+<table width="100%" cellpadding="5">
+<tr>
+<td><h1>VMware vSphere Web Services SDK: JAX-WS Samples Readme</h1></td>
+<td align="right">
+<img src="../../docresources/vmware.gif" alt="VMware logo" width="187" height="72" border="0"></img>
+</td>
+</tr>
+</table>
+
+<p class="Nav">
+<img src="../../docresources/page.gif" alt="Back to the main Readme" width="13" height="16" border="0"></img> &nbsp;
+<a href="../../docs/SDK-README.html" title="Go back to the Web Services SDK Readme...">VMware vSphere Web Services SDK Readme</a>
+</p>
+
+<hr />
+<p>
+This document describes the vSphere Web Services SDK samples that use the JAX-WS bindings
+for the vSphere API.  The examples have been developed to work with the JAX-WS bundled with the JDK 1.7.
+</p>
+
+The following sections describe how to build and run the vSphere Web Services SDK
+JAX-WS samples.
+
+<ul>
+<li><a href="#sample_directories">Sample Directories</a></li>
+<li><a href="#sample_structure">Sample Program Structure</a></li>
+<li><a href="#build_samples">Building the Sample Programs</a></li>
+<li><a href="#run_samples">Running the Sample Programs</a></li>
+<li><a href="#samples_doc">Sample Documentation</a></li>
+</ul>
+
+<a name="sample_directories"></a>
+<h2>Sample Directories</h2>
+
+<p>
+The vSphere Web Services SDK samples are located in sub-directories
+in the following vSphere Management SDK directory:
+</p>
+&nbsp;&nbsp;&nbsp;&nbsp;<code>.../SDK/vsphere-ws/java/JAXWS/samples/com/vmware/</code>
+</p>
+<p>
+The sample sub-directories are organized into the following capabilities:
+</p>
+<table border="1" cellpadding="5">
+<tr><th>Capability/Directory</th><th>Samples</th></tr>
+<tr><td>general</td><td>Demonstrates basic capabilities of the vSphere API.</td></tr>
+<tr><td>alarms</td><td>Demonstrates how to use alarms to monitor the vSphere environment.</td></tr>
+<tr><td>connection</td><td>How to establish a connection with a vCenter Server.</td></tr>
+<tr><td>cim</td><td>Demonstrates how to use Common Information Model (CIM) in the vSphere environment.</td></tr>
+<tr><td>events</td><td>How to use the event history collector.</td></tr>
+<tr><td>guest</td><td>How to use the vSphere API to perform guest operations.</td></tr>
+<tr><td>host</td><td>Host system and network configuration.</td></tr>
+<tr><td>httpfileaccess</td><td>File operations using the HTTP protocol.</td></tr>
+<tr><td>performance</td><td>How to retrieve performance data.</td></tr>
+<tr><td>scheduling</td><td>How to schedule tasks.</td></tr>
+<tr><td>scsilun</td><td>How to retrieve SCSI LUN identification data.</td></tr>
+<tr><td>security</td><td>Username and password credential storage for automated application execution.</td></tr>
+<tr><td>simpleagent</td><td>Support for automated login using local credential store.</td></tr>
+<tr><td>storage</td><td>Storage DRS.</td></tr>
+<tr><td>vapp</td><td>Using OVF Manager for import and export of virtual applications and
+       virtual machine disk files.</td></tr>
+<tr><td>vm</td><td>Virtual machine operations.</td></tr>
+</table>
+
+<a name="sample_structure"></a>
+<h2>Sample Program Structure</h2>
+<p>
+Every vCenter client application performs the following basic tasks:
+</p>
+<ul>
+<li>Authenticating and connecting to a vCenter Server to establish a session.</li>
+<li>Obtaining access to vSphere methods.</li>
+<li>Using the methods to perform vSphere operations.</li>
+</ul>
+<p>
+The samples use custom Java annotations to organize these tasks. These annotations
+are <code>@Before</code>, <code>@Action</code>, and <code>@After</code>.
+The SDK sample code includes a samples framework that runs the samples and executes the sample code.
+</p>
+<ul>
+<li>Each sample extends the class <code>ConnectedVimServiceBase</code>
+(<code>.../SDK/vsphere-ws/java/JAXWS/samples/com/vmware/connection/ConnectedVimServiceBase.java</code>).
+This class contains the <code>@Before</code> and <code>@After</code> declarations.
+The <code>@Before</code> code performs authentication, connects to the vCenter Server,
+and obtains access to the vSphere methods.
+The <code>@After</code> code disconnects from the Server. <br /> <br /> </li>
+<li>Authentication and connection are handled in the connection sample implementation.
+For example, <code>SsoConnection.java</code> contains the SSO connection implementation.
+It obtains an SSO token for vCenter login, and it obtains access to the vSphere API methods.
+<p>
+The SSO connection implementation uses the VMware Single Sign On sample code
+that is contained in the vSphere Management SDK (<code>.../SDK/ssoclient/</code>).
+See the <i>VMware Single Sign On Programming Guide</i>.
+</li>
+<li>Each sample file contains the <code>@Action</code> declaration, which contains the code
+that performs the capability of the particular sample.
+<p>
+For example, the <code>GetCurrentTime</code> sample 
+contains the <code>@Action</code> code - a call to the <code>CurrentTime</code> method.
+<code>GetCurrentTime.java</code> is located in the <code>general</code> directory
+(<code>.../SDK/vsphere-ws/java/JAXWS/samples/com/vmware/general/</code>).
+</p>
+<code>
+public class GetCurrentTime extends ConnectedVimServiceBase {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;@Action<br />
+&nbsp;&nbsp;&nbsp;&nbsp;public void getCurrentTime() throws RuntimeFaultFaultMsg {<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;XMLGregorianCalendar ct = vimPort.currentTime(this.getServiceInstanceReference());<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SimpleDateFormat sdf =<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;new SimpleDateFormat("yyyy-MM-dd 'T' HH:mm:ss.SSSZ");<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;System.out.println("Server current time: "<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+ sdf.format(ct.toGregorianCalendar().getTime()));<br />
+&nbsp;&nbsp;&nbsp;&nbsp;}<br />
+}
+</code>
+<p>
+The <code>GetCurrentTime</code> class extends the <code>ConnectedVimServiceBase</code> class
+and inherits its connection capability. When the <code>GetCurrentTime</code> sample executes,
+the sample framework performs the following:
+<p>
+<ul>
+<li>Executes the <code>ConnectedVimServiceBase @Before</code> code to establish the connection.
+This code also retrieves the <code>vimPort</code> object for access to vSphere API methods.
+</li>
+<li>Executes the <code>GetCurrentTime @Action</code> code to retrieve and display the current time.</li>
+<li>Executes the <code>ConnectedVimServiceBase @After</code> code to close the connection.</li>
+</ul>
+</ul>
+
+
+<a name="build_samples"></a>
+<h2>Building the Sample Programs</h2>
+<p>
+To build the sample programs, you must define the <code>JAVA_HOME environment variable
+and execute one of the build scripts to generate client stubs and compile the samples.
+</p>
+
+<h3>JAVA_HOME Environment Variable</h3>
+<p>
+You must set the JAVA_HOME environment variable to the base directory of a JDK 1.7.
+</p>
+
+<h3>Build Scripts</h3>
+<p>
+The following table shows the build files located in the
+<code>SDK/vsphere-ws/java/JAX-WS/</code> directory.
+</p>
+<table border="1" cellpadding="5">
+
+<tr><th>Build Task</th><th>Files</th></tr>
+<tr><td>Generate JAX-WS client stubs and compile samples.</td>
+    <td>build.sh<br/>build.bat</tr>
+<tr><td>Delete generated files.</td>
+    <td>clean.sh<br/>clean.bat</td></tr>
+<tr><td>Specify input for sample execution.</td><td>sample.properties</td></tr>
+<tr><td>Specify connection parameters for sample execution.</td><td>connection.properties</td></tr>
+<tr><td>Run a sample.</td><td>run.bat<br />run.sh</td></tr>
+</table>
+<br /><br />
+<h4>Converting Shell Scripts for Linux</h4>
+<p>
+The shell scripts (build.sh, clean.sh and run.sh) have DOS-style line endings.
+These do not work when running these scripts on Linux. Use the Linux command
+<code>dos2unix</code> to convert these files before you use them.
+</p>
+<p>
+To run these scripts, set the Execute permission on the files:
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;<code>chmod a+x *.sh</code>
+</p>
+
+<a name="build"></a>
+<h2><strong>Building Sample Programs</strong></h2>
+<p>
+    The build scripts (build.sh and build.bat) generate vSphere API Java stubs from
+    the vSphere API WSDL, compile the generated stubs, and compile the sample programs.
+    You can specify the following command line options to control stub generation and
+    compilation.
+</p><ul>
+    <li><strong><code>build -w</code></strong>&nbsp;&nbsp;- Compiles sample programs but does
+        not generate or compile stubs.</li>
+    <li><strong><code>build -c</code></strong>&nbsp;&nbsp; - Compiles stubs and sample programs; does not
+        generate stubs.</li>
+</ul>
+
+<h4>WSDL File Dependency</h4>
+<p>
+JAX-WS requires a WSDL file for stub generation and compilation.
+To manage this dependency, the build script performs the following operations:
+</p>
+<ul>
+<li>Uses the JDK tool <code>wsimport</code> to generate the vSphere Web services Java stubs
+from the vSphere API WSDL file (<code>vimService.wsdl</code>).
+</li>
+<li>Specifies the <code>-wsdlLocation</code> command line option to <code>wsimport</code>
+to identify the WSDL file location.
+</li>
+<li>Copies the WSDL file and related schema files into the <code>vim25.jar</code> file.
+</li>
+</ul>
+
+<p>
+To compile Java code that imports the generated stubs and uses the <code>vim25.jar</code> built
+by the build script, the WSDL file must be in the same location that was specified in the
+<code>-wsdlLocation</code> command line option. To establish this location, the build
+script modifies the VimService class to reference the WSDL location inside the JAR file.
+You only need to add the <code>vim25.jar</code> file to your class path.
+</p>
+
+
+<a name="run_sample"></a>
+<h2>Running a Sample</h2>
+<p>
+The samples framework is designed to execute any of the samples provided in the kit.
+To run a sample, you must specify authentication parameters and server URLs.
+</p>
+<ul>
+<li>Username and password for authentication with the VMware SSO Server.</li>
+<li>URLs for the VMware SSO Server and vCenter Server.</li>
+</ul>
+<p>
+You can specify these in the sample properties file:
+</p>
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;.../SDK/vsphere-ws/java/JAXWS/samples.properties 
+</code>
+</p>
+<p>
+You can specify the vCenter Server URL, username and password in the <code>sample.properties</code>
+file, or you can specify them on the command line when you execute a sample program.
+These properties are declared as input options, using the <code>@Option</code> declarations
+and implementation in the following files:
+</p>
+<p>
+<code>
+&nbsp;&nbsp;&nbsp;&nbsp;/SDK/vsphere-ws/java/JAXWS/samples/com/vmware/connection/Connection.java<br />
+&nbsp;&nbsp;&nbsp;&nbsp;/SDK/vsphere-ws/java/JAXWS/samples/com/vmware/connection/SsoConnection.java<br />
+</code>
+</p>
+<p>
+When you execute a sample, the samples framework will resolve the input values from the appropriate source.
+</p>
+
+
+<a name="samples_doc"></a>
+<h2><strong>Samples Documentation</strong></h2>
+<p>
+To print help about a sample, specify --help on the command line.
+</p>
+<p>
+You can also find information about the samples in the 
+<a href="../../docs/java/JAXWS/javadoc/index.html">JAX-WS Samples Reference Documentation</a>.
+Each package has a class summary that describes one or more samples.
+</p>
+
+
+
+<hr />
+<table border="0" width="100%">
+<tr>
+<td>
+<p class="Miniscule">Copyright &copy; 2012-2014 VMware, Inc.  All rights not expressly granted herein are reserved.</p>
+</td>
+<td align="right"><p class="Miniscule">Last updated: 16 Jan 2014&nbsp;|&nbsp; VMware vSphere Web Services SDK</p></td>
+</tr>
+</table>
+
+</td></tr></table>
+</body>
+</html>

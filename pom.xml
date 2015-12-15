@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.vmware.vsphere.sdk.samples</groupId>
+    <artifactId>vsphere-sdk-samples</artifactId>
+    <version>6.0</version>
+    <packaging>pom</packaging>
+
+
+    <modules>
+        <module>install-lib</module>
+        <module>vsphere-ws</module>
+        <module>ssoclient</module>
+    </modules>
+
+
+    <build>
+        <sourceDirectory>java/JAXWS/samples</sourceDirectory>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>2.4.3</version>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>1.7</source>
+                        <target>1.7</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.vmware.vsphere.sdk</groupId>
+                <artifactId>install-lib</artifactId>
+                <version>6.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vmware.vsphere.sdk.samples</groupId>
+                <artifactId>ssoclient</artifactId>
+                <version>6.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vmware.vsphere.sdk</groupId>
+                <artifactId>vim</artifactId>
+                <version>6.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vmware.vsphere.sdk</groupId>
+                <artifactId>ssoclient</artifactId>
+                <version>6.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vmware.vsphere.sdk.samples</groupId>
+                <artifactId>samples-core</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vmware.vsphere.sdk.samples</groupId>
+                <artifactId>samples-annotations</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vmware.vsphere.sdk.samples</groupId>
+                <artifactId>sblim-cim-client2</artifactId>
+                <version>2.2.1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>vsphere-sdk-samples</artifactId>
+        <groupId>com.vmware.vsphere.sdk.samples</groupId>
+        <version>6.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>vsphere-ws</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.vmware.vsphere.sdk.samples</groupId>
+            <artifactId>ssoclient</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vmware.vsphere.sdk</groupId>
+            <artifactId>ssoclient</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vmware.vsphere.sdk</groupId>
+            <artifactId>vim</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vmware.vsphere.sdk.samples</groupId>
+            <artifactId>samples-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vmware.vsphere.sdk.samples</groupId>
+            <artifactId>samples-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.vmware.vsphere.sdk.samples</groupId>
+            <artifactId>sblim-cim-client2</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-dependency-plugin</artifactId>
+            <executions>
+            <execution>
+                <id>copy-dependencies</id>
+                <phase>prepare-package</phase>
+                <goals>
+                    <goal>copy-dependencies</goal>
+                </goals>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                    <overWriteReleases>true</overWriteReleases>
+                    <overWriteSnapshots>true</overWriteSnapshots>
+                    <overWriteIfNewer>true</overWriteIfNewer>
+                </configuration>
+            </execution>
+            </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
