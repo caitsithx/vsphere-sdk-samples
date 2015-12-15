@@ -13,6 +13,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.vmware.vsphere.sdk</groupId>
             <artifactId>ssoclient</artifactId>
         </dependency>
